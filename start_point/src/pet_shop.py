@@ -46,10 +46,16 @@ def remove_customer_cash(customer, number):
 def get_customer_pet_count(customer):
     return len(customer["pets"])
 
-def add_pet_to_customer(customer, customer_name):
-    for customer in customer["name"]:
-        if customer["name"] == str(customer_name):
-                    customer["pets"].append(new_pet)
+def add_pet_to_customer(customer, new_pet):
+    customer["pets"].append(new_pet)
+
+def customer_can_afford_pet(customer, new_pet):
+    if customer["cash"] >= new_pet["price"]:
+        can_buy_pet = True
+    else:
+        can_buy_pet = False
+    return can_buy_pet
+
 
 
 
