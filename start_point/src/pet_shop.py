@@ -56,6 +56,14 @@ def customer_can_afford_pet(customer, new_pet):
         can_buy_pet = False
     return can_buy_pet
 
+def sell_pet_to_customer(cc_pet_shop, pet, customer):
+    customer["pets"].append(pet)
+    cc_pet_shop["admin"]["pets_sold"] += 1
+    customer["cash"] -= pet["price"]
+    cc_pet_shop["admin"]["total_cash"] += pet["price"]
+
+    
+
 
 
 
